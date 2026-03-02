@@ -1,4 +1,4 @@
-package engine.cards;
+package engine.exceptions;
 
 public class test {
     public static void main(String[] args) {
