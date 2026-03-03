@@ -1,4 +1,4 @@
-package engine.cells;
+package game.engine.cells;
 
 public class test {
     public static void main(String[] args) {

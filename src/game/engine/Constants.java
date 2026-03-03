@@ -1,4 +1,4 @@
-package engine;
+package game.engine;
 
 public final class Constants {
     int BOARD_SIZE = 100;

@@ -1,4 +1,4 @@
-package engine;
+package game.engine;
 
 public enum Role {
     SCARER, LAUGHER;

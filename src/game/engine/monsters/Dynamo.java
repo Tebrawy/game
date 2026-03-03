@@ -1,6 +1,6 @@
-package engine.monsters;
+package game.engine.monsters;
 
-import engine.Role;
+import game.engine.Role;
 
 public class Dynamo extends Monster{
     public Dynamo(String name, String description, Role role, int energy) {
