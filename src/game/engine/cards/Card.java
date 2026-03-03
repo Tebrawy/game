@@ -1,4 +1,4 @@
-package engine.cards;
+package game.engine.cards;
 
 public abstract class Card {
 	private String name;
