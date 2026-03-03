@@ -95,5 +95,4 @@ public abstract class Monster implements Comparable<Monster>{
             return 0;
     }
 
-    public abstract int compareTo(Object o);
 }
