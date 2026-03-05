@@ -9,9 +9,4 @@ public class Dasher extends Monster{
         super(name, description, role, energy);
         this.momentumTurns = 0;
     }
-
-    @Override
-    public int compareTo(Object o) {
-        return 0;
-    }
 }
