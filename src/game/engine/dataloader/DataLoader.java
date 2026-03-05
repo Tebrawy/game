@@ -27,29 +27,49 @@ public class DataLoader {
 				String type = data[0].toUpperCase();
 				String name = data[1];
 				String desc = data[2];
-				int rarity = Integer.parseInt(data[3]);
-			
-				switch (type){
-					case "SWAPPER":
-						cards.add(new SwapperCard(name, desc, rarity));
-						break;
-					case "SHIELD":
-						cards.add(new ShieldCard(name, desc, rarity));
-						break;
-					case "STARTOVER":
-						if (data.length < 5) throw new InvalidCSVFormat("Lucky value missing", line);
-						cards.add(new StartOverCard(name, desc, rarity, Boolean.parseBoolean(data[4])));
-						break;
-					case "ENERGYSTEAL":
-						if (data.length < 5) throw new InvalidCSVFormat("Energy value missing", line);
-						cards.add(new EnergyStealCard(name, desc, rarity, Integer.parseInt(data[4])));
-						break;
-					case "CONFUSION":
-						if (data.length < 5) throw new InvalidCSVFormat("Duration missing", line);
-						cards.add(new ConfusionCard(name, desc, rarity, Integer.parseInt(data[4])));
-						break;
-					default:
-						throw new InvalidCSVFormat("Unknown card type", line);
+				try{
+					int rarity = Integer.parseInt(data[3]);
+					switch (type){
+						case "SWAPPER":
+							cards.add(new SwapperCard(name, desc, rarity));
+							break;
+						case "SHIELD":
+							cards.add(new ShieldCard(name, desc, rarity));
+							break;
+						case "STARTOVER":
+							if (data.length < 5) throw new InvalidCSVFormat("Lucky value missing", line);
+							String luckyStr = data[4].trim().toLowerCase();
+	                        if (!luckyStr.equals("true") && !luckyStr.equals("false")) {
+	                        	throw new InvalidCSVFormat("Invalid lucky boolean format", line);
+	                        }
+							cards.add(new StartOverCard(name, desc, rarity, Boolean.parseBoolean(luckyStr)));
+							break;
+						case "ENERGYSTEAL":
+							if (data.length < 5) throw new InvalidCSVFormat("Energy value missing", line);
+							String energyStr = data[4].trim().toLowerCase();
+							int energyAmount;
+	                        try {
+	                            energyAmount = Integer.parseInt(data[4].trim());
+	                        } catch (NumberFormatException e) {
+	                            throw new InvalidCSVFormat("Invalid energy format", line);
+	                        }
+							cards.add(new EnergyStealCard(name, desc, rarity, energyAmount));
+							break;
+						case "CONFUSION":
+							if (data.length < 5) throw new InvalidCSVFormat("Duration missing", line);
+							int duration;
+	                        try {
+	                            duration = Integer.parseInt(data[4].trim());
+	                        } catch (NumberFormatException e) {
+	                            throw new InvalidCSVFormat("Invalid energy format", line);
+	                        }
+							cards.add(new ConfusionCard(name, desc, rarity, duration));
+							break;
+						default:
+							throw new InvalidCSVFormat("Unknown card type", line);
+					}
+				} catch(NumberFormatException e){
+					throw new InvalidCSVFormat("Invalid number format in card data", line);
 				}
 			}
 		}
