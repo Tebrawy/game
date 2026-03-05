@@ -87,12 +87,7 @@ public abstract class Monster implements Comparable<Monster>{
 
     @Override
     public int compareTo(Monster o){
-        if(this.position>o.position)
-            return 1;
-        else if(this.position<o.position)
-            return -1;
-        else
-            return 0;
+        return Integer.compare(this.position,o.position);
     }
 
 }
