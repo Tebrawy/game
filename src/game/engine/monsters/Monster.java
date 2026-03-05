@@ -1,6 +1,6 @@
-package engine.monsters;
+package game.engine.monsters;
 
-import engine.Role;
+import game.engine.Role;
 
 public abstract class Monster implements Comparable<Monster>{
     private String name;
@@ -89,4 +89,5 @@ public abstract class Monster implements Comparable<Monster>{
     public int compareTo(Monster o){
         return Integer.compare(this.position,o.position);
     }
+
 }

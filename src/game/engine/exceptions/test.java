@@ -1,0 +1,7 @@
+package game.engine.exceptions;
+
+public class test {
+    public static void main(String[] args) {
+
+    }
+}

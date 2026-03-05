@@ -1,6 +1,6 @@
-package engine.monsters;
+package game.engine.monsters;
 
-import engine.Role;
+import game.engine.Role;
 
 public class MultiTasker extends Monster{
     int normalSpeedTurns;

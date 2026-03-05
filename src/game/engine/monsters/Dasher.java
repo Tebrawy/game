@@ -1,6 +1,6 @@
-package engine.monsters;
+package game.engine.monsters;
 
-import engine.Role;
+import game.engine.Role;
 
 public class Dasher extends Monster{
     int momentumTurns;
