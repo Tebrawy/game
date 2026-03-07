@@ -1,5 +1,4 @@
-
-package engine.interfaces;
+package game.engine.dataloader;
 
 public class test {
     public static void main(String[] args) {

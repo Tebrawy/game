@@ -1,4 +1,4 @@
-package engine.cards;
+package game.engine.cards;
 
 public class ConfusionCard extends Card {
 	private int duration;

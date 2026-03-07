@@ -1,4 +1,4 @@
-package engine.interfaces;
+package game.engine.interfaces;
 
 public interface CanisterModifier {
 }
