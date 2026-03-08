@@ -58,7 +58,12 @@ public abstract class Monster implements Comparable<Monster>{
     }
 
     public void setPosition(int position) {
-        this.position = position;
+        if (position < 0) {
+            this.position = 0;
+        } else {
+            // Modulo 100 ensures the position wraps around if it exceeds 99
+            this.position = position % 100;
+        }
     }
 
     public boolean isFrozen() {

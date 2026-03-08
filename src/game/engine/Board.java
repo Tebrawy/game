@@ -7,27 +7,27 @@ import game.engine.monsters.Monster;
 import java.util.ArrayList;
 
 public class Board {
-    private final Cell[][] boardCell;
+    private final Cell[][] boardCells;
     private static ArrayList<Monster> stationedMonsters;
-    private final ArrayList<Card> originalCards;
-    private static ArrayList<Card> cards;
+    private static ArrayList<Card> originalCards;
+    public static ArrayList<Card> cards;
 
     public Board(ArrayList<Card> readCards) {
-        this.originalCards = readCards;
-        this.boardCell = new Cell[Constants.BOARD_ROWS][Constants.BOARD_COLS];
+        originalCards = readCards;
+        this.boardCells = new Cell[Constants.BOARD_ROWS][Constants.BOARD_COLS];
         stationedMonsters = new ArrayList<>();
         cards = new ArrayList<>();
     }
 
     public Cell[][] getBoardCell() {
-        return boardCell;
+        return boardCells;
     }
 
     public static ArrayList<Monster> getStationedMonsters() {
         return stationedMonsters;
     }
 
-    public ArrayList<Card> getOriginalCards() {
+    public static ArrayList<Card> getOriginalCards() {
         return originalCards;
     }
 
