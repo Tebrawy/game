@@ -50,7 +50,7 @@ public abstract class Monster implements Comparable<Monster>{
     }
 
     public void setEnergy(int energy) {
-        this.energy = energy;
+        this.energy = Math.max(0,energy);
     }
 
     public int getPosition() {
@@ -61,7 +61,6 @@ public abstract class Monster implements Comparable<Monster>{
         if (position < 0) {
             this.position = 0;
         } else {
-            // Modulo 100 ensures the position wraps around if it exceeds 99
             this.position = position % 100;
         }
     }
