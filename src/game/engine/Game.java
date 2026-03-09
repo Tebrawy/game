@@ -28,10 +28,12 @@ public class Game {
     private Monster selectRandomMonsterByRole(Role role) {
         ArrayList<Monster> candidates = new ArrayList<>();
         for (Monster m : allMonsters) {
-            if (m.getOriginalRole() == role) {
+            if (m.getRole() == role) {
                 candidates.add(m);
             }
         }
+        if(candidates.isEmpty())
+            return null;
         return candidates.get(new Random().nextInt(candidates.size()));
     }
 
